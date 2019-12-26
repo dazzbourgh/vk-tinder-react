@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ActionButton from './components/buttons/ActionButton'
+import PhotoFrame from "./components/photo/PhotoFrame";
+
+const like = `${process.env.PUBLIC_URL}/icons/like.png`;
+const dislike = `${process.env.PUBLIC_URL}/icons/dislike.png`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="vk-tinder-main">
+        <PhotoFrame user={{photo: null}}/>
+        <div className='button-container'>
+            <ActionButton imageLink={dislike} />
+            <ActionButton imageLink={like} />
+        </div>
     </div>
   );
 }
