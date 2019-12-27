@@ -31,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vkontakte/vkui-connect-mock": "^1.0.62"
   }
 }
