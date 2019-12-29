@@ -1,4 +1,5 @@
 import React from "react";
+import UsernameComponent from "../captions/Username";
 
 export default class PhotoFrame extends React.Component {
 
@@ -8,6 +9,10 @@ export default class PhotoFrame extends React.Component {
     }
 
     render() {
-        return <img src={this.props.user.photo} alt='user' className='user-photo'/>;
+        return <div className='user-photo-container'>
+            <img src={this.props.user.photo} alt='user' className='user-photo'/>
+            <div className='user-photo-overlay' />
+            <UsernameComponent user={this.props.user}/>
+        </div>;
     }
 }
