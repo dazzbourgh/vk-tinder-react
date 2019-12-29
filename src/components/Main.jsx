@@ -2,6 +2,8 @@ import React from "react";
 import PhotoFrame from "./photo/PhotoFrame";
 import ActionButton from "./buttons/ActionButton";
 import vkService from "../service/VkService";
+import dataService, {Reactions} from "../service/DataService";
+import {UserBar} from "./bars/UserBar";
 
 const likeIcon = `${process.env.PUBLIC_URL}/icons/like.png`;
 const dislikeIcon = `${process.env.PUBLIC_URL}/icons/dislike.png`;
@@ -10,6 +12,7 @@ export default class Main extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+            appUser: {},
             user: {},
             users: []
         };
@@ -18,7 +21,8 @@ export default class Main extends React.Component {
     render() {
         return (
             <div className='grid'>
-                <PhotoFrame user={this.state.user} className='user-photo'/>
+                <UserBar/>
+                <PhotoFrame user={this.state.user}/>
                 <div className='button-container'>
                     <ActionButton imageLink={dislikeIcon} onClick={dislike.bind(this)}/>
                     <ActionButton imageLink={likeIcon} onClick={like.bind(this)}/>
@@ -33,10 +37,16 @@ export default class Main extends React.Component {
 }
 
 function like() {
+    dataService.saveReaction(this.state.appUser.id,
+        this.state.user.id,
+        Reactions.like);
     updateUsers.call(this);
 }
 
 function dislike() {
+    dataService.saveReaction(this.state.appUser.id,
+        this.state.user.id,
+        Reactions.dislike);
     updateUsers.call(this);
 }
 

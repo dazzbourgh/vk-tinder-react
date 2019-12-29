@@ -9,7 +9,7 @@
 .user-photo-container {
   position: relative;
   display: block;
-  height: 607px;
+  height: 65%;
   border: 0 transparent;
   border-radius: 75px;
 }
@@ -31,7 +31,7 @@
   background: linear-gradient(178deg, rgba(40,40,40,1) 0%, rgba(255,255,255,0.6292892156862745) 0%, rgba(255,255,255,0) 0%, rgba(0,0,0,0.06066176470588236) 62%, rgba(0,0,0,1) 100%);
 }
 
-.action-button:hover {
+.action-button:hover, .user-bar:hover {
   background-color: lightgrey;
   cursor: pointer;
 }
@@ -39,11 +39,12 @@
 .action-button {
   display: inline-block;
   width: 50%;
+  height: 100%;
 }
 
 .button-container {
   width: 607px;
-  height: 20vh;
+  height: 25%;
 }
 
 .username {
@@ -54,4 +55,18 @@
   position: absolute;
   bottom: 5%;
   left: 5%;
+}
+
+.user-bar {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  font-size: xx-large;
+  align-items: center;
+  text-align: center;
+}
+
+.match-icon {
+  height: 100%;
+  right: 0;
 }

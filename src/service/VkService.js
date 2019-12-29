@@ -2,6 +2,7 @@ import VKConnect from '@vkontakte/vkui-connect-mock';
 import {User} from "../domain/domain";
 
 class VkService {
+    // TODO: use actual connect
     constructor() {
         VKConnect.send('VKWebAppInit', {});
     }
