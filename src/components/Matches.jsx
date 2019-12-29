@@ -1,6 +1,7 @@
 import React from "react";
 import {ProfileList} from "./lists/ProfileList";
 import dataService from "../service/DataService";
+import {Link} from "react-router-dom";
 
 export class Matches extends React.Component {
 
@@ -18,14 +19,11 @@ export class Matches extends React.Component {
             : <ProfileList users={this.state.users}/>;
         return (
             <div className='grid'>
-                <div className='user-bar' onClick={() => window.location = '/'}>
-                    <a href='/' className='no-decor'>Back</a>
-                </div>
+                <Link to='/' className='user-bar no-decor'>Back</Link>
                 {list}
             </div>
         );
     }
-
 
     componentDidMount() {
         this.setState({

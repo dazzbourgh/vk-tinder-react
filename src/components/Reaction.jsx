@@ -21,7 +21,7 @@ export default class Reaction extends React.Component {
     render() {
         return (
             <div className='grid'>
-                <UserBar onClick={() => window.location = '/matches'}/>
+                <UserBar/>
                 <PhotoFrame user={this.state.user}/>
                 <div className='button-container'>
                     <ActionButton imageLink={dislikeIcon} onClick={dislike.bind(this)}/>

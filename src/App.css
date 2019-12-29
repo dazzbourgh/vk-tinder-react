@@ -31,9 +31,9 @@
   background: linear-gradient(178deg, rgba(40,40,40,1) 0%, rgba(255,255,255,0.6292892156862745) 0%, rgba(255,255,255,0) 0%, rgba(0,0,0,0.06066176470588236) 62%, rgba(0,0,0,1) 100%);
 }
 
-.action-button:hover, .user-bar:hover {
-  background-color: lightgrey;
-  cursor: pointer;
+.action-button:hover, .user-bar:hover, .profile-list-element:hover {
+    background-color: lightgrey;
+    cursor: pointer;
 }
 
 .action-button {
@@ -72,10 +72,21 @@
 }
 
 .no-decor, .no-decor:visited, .no-decor:active, .no-decor:hover {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .profile-list-element {
-  border: 1px solid grey;
+    border: 1px solid lightgrey;
+    padding: 5px 3px;
+    font-size: xx-large;
+}
+
+.no-dot {
+    list-style-type: none;
+}
+
+.match-profile-pic {
+    height: 50px;
+    margin-right: 20px;
 }

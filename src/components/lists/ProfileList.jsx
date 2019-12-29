@@ -5,12 +5,12 @@ export class ProfileList extends React.Component {
 
     render() {
         return (
-            <ul>
+            <div className='no-dot'>
                 {this.props.users.map(user =>
-                    <li>
+                    <div className='profile-list-element'>
                         <ProfileListElement user={user}/>
-                    </li>)}
-            </ul>
+                    </div>)}
+            </div>
         );
     }
 }
